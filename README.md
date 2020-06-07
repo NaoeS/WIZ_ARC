@@ -1,24 +1,34 @@
-# README
+# WIZ_ARC
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## ローカル実行
 
-Things you may want to cover:
+### 初回準備
 
-* Ruby version
+```sh
+docker-compose build
+docker-compose up
 
-* System dependencies
+# 別窓実行
+docker-compose run api rails db:create
+docker-compose run api rails db:migrate
+```
 
-* Configuration
+### 起動
 
-* Database creation
+```sh
+docker-compose up
+```
 
-* Database initialization
+http://localhost:9000 に接続
 
-* How to run the test suite
+### 終了
 
-* Services (job queues, cache servers, search engines, etc.)
+```sh
+docker-compose down
+```
 
-* Deployment instructions
+### コマンド実行
 
-* ...
+```sh
+docker-compose run api {command}
+```
