@@ -9,8 +9,8 @@ docker-compose build
 docker-compose up
 
 # 別窓実行
-docker-compose run api rails db:create
-docker-compose run api rails db:migrate
+docker-compose run rails rails db:create
+docker-compose run rails rails db:migrate
 ```
 
 ### 起動
@@ -30,5 +30,5 @@ docker-compose down
 ### コマンド実行
 
 ```sh
-docker-compose run api {command}
+docker-compose run rails {command}
 ```
