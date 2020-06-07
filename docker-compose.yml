@@ -1,6 +1,6 @@
 version: '3'
 services:
-  api: &api
+  rails: &rails
     build:
       context: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
@@ -12,15 +12,15 @@ services:
     tty: true
     stdin_open: true
     depends_on:
-      - db
-  db: &db
+      - mysql
+  mysql: &mysql
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - "db-data:/var/lib/mysql"
+      - "mysql-data:/var/lib/mysql"
     ports:
       - "9906:3306"
 volumes:
-  db-data:
+  mysql-data:
   bundle:
