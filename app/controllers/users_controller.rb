@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
+  include Pagy::Backend
+
   def index
-    paginate json: User.all
+    pagy, users = pagy(User.all)
+
+    pagy_headers_merge(pagy)
+
+    render json: users
   end
 end
