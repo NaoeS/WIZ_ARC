@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   end
 
   post '/graphql', to: 'graphql#execute'
+
+  mount GraphdocRuby::Application, at: 'graphdoc'
 end

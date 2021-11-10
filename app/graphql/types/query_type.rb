@@ -18,5 +18,10 @@ module Types
     def users
       User.all
     end
+
+    field :decks, [Types::DeckType], null: false
+    def decks
+      Deck.all
+    end
   end
 end
